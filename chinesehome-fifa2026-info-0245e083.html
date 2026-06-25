@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>查赛程、看解读 · 世界杯实用页面</title>
+  <style>
+    /* 极简留白 · 窄正文 · 清晰层级 */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #f9f8f7;
+      font-family: Georgia, 'Times New Roman', 'Noto Serif SC', serif;
+      color: #1e1e1c;
+      line-height: 1.9;
+      padding: 2.4rem 1rem 4rem;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .page-container {
+      max-width: 680px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    /* 文章头部 */
+    .article-header {
+      margin-bottom: 2.8rem;
+      border-bottom: 1px solid #e4e2de;
+      padding-bottom: 1.8rem;
+    }
+
+    .article-title {
+      font-size: 2rem;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      color: #1c1b19;
+      margin-bottom: 0.5rem;
+      line-height: 1.25;
+    }
+
+    .article-sub {
+      font-size: 1rem;
+      color: #706c66;
+      font-weight: 400;
+      font-style: normal;
+      margin-top: 0.25rem;
+      border-left: 3px solid #d0cbc4;
+      padding-left: 1rem;
+    }
+
+    /* 正文排版 */
+    .entry p {
+      margin-bottom: 1.6rem;
+      font-size: 1.05rem;
+      text-align: left;
+    }
+
+    .entry p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* 引用块 / 提示 */
+    .quote-note {
+      background: #f0ede8;
+      border-left: 4px solid #b0a89c;
+      padding: 1.2rem 1.6rem;
+      margin: 2rem 0;
+      font-size: 0.98rem;
+      color: #2c2a27;
+      border-radius: 0 6px 6px 0;
+    }
+
+    .quote-note strong {
+      display: inline-block;
+      font-weight: 600;
+      color: #3b3731;
+      margin-right: 0.3rem;
+    }
+
+    /* 片段标题（小标题） */
+    .section-head {
+      font-size: 1.25rem;
+      font-weight: 500;
+      margin: 2.2rem 0 0.8rem 0;
+      letter-spacing: 0.02em;
+      color: #282623;
+      border-bottom: 1px dashed #d9d4ce;
+      padding-bottom: 0.3rem;
+    }
+
+    /* 链接样式 */
+    a {
+      color: #2f5a7a;
+      text-decoration: none;
+      border-bottom: 1px solid #b7cbd9;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    a:hover {
+      color: #0a3146;
+      border-bottom-color: #0a3146;
+    }
+
+    /* 标签 / 小注 */
+    .meta-footnote {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #e0dcd6;
+      font-size: 0.9rem;
+      color: #716b63;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem 1.2rem;
+    }
+
+    .meta-footnote span {
+      white-space: nowrap;
+    }
+
+    /* FAQ 摘要卡片风格 */
+    .faq-mini {
+      background: #fcfbf9;
+      border: 1px solid #e5e1da;
+      padding: 0.8rem 1.4rem 1.2rem;
+      margin: 2.2rem 0;
+      border-radius: 10px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.02);
+    }
+
+    .faq-mini summary {
+      font-weight: 500;
+      font-size: 1.04rem;
+      cursor: pointer;
+      padding: 0.3rem 0;
+      color: #1f2e3c;
+    }
+
+    .faq-mini p {
+      margin-top: 0.8rem;
+      font-size: 0.98rem;
+      color: #3b3731;
+    }
+
+    /* 响应式 */
+    @media (max-width: 520px) {
+      body {
+        padding: 1.6rem 0.8rem 3rem;
+      }
+      .article-title {
+        font-size: 1.7rem;
+      }
+      .entry p {
+        font-size: 1rem;
+      }
+      .quote-note {
+        padding: 1rem 1.2rem;
+      }
+    }
+
+    @media (min-width: 800px) {
+      .page-container {
+        max-width: 700px;
+      }
+      .article-title {
+        font-size: 2.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-container">
+
+    <!-- 文章头部 -->
+    <header class="article-header">
+      <h1 class="article-title">赛历·对照·延伸<br>一份世界杯查询笔记</h1>
+      <div class="article-sub">日常翻查、快速比对，不只有赛程</div>
+    </header>
+
+    <!-- 正文 -->
+    <div class="entry">
+
+      <p>
+        每到大赛周期，查找比赛时间、确认小组对阵、回顾历史数据，常常需要在不同页面之间来回切换。与其反复搜索零散信息，不如把常用的对照页集中在一处。这篇笔记整理了在查阅 <a href="https://chinesehome-fifa2026.com">世界杯</a> 相关信息时经常用到的几个方向，算是一份轻量的桌面参考。
+      </p>
+
+      <div class="section-head">▎如何快速对齐时间与组别</div>
+      <p>
+        赛程页面最常见的场景是：手边放着一列比赛日期，却需要同时查看对应的小组和场地。多数平台把赛程拆成独立轮次，翻页反而打断了对照节奏。我习惯在同一个视图里列出全部小组对阵，用色块区分阶段。如果你也偏向“一览全貌”的查询方式，那么在 <a href="https://chinesehome-fifa2026.com">世界杯</a> 赛历页里按日期+组别双重排序的模式会更顺手。
+      </p>
+
+      <div class="section-head">▎延伸对照：历史场次与纪录</div>
+      <p>
+        除了本届赛程，我还常把过去几届的淘汰赛结果并列出来。同一支球队在不同年份的晋级路线，往往能看出战术风格的延续或变化。把 2018、2022 和 2026 的决赛圈数据放在相邻的表格里，每届的进球分布、黑马走势就一目了然。这种纵向对比，才是翻查赛历之外真正的延伸阅读。
+      </p>
+
+      <div class="quote-note">
+        <strong>📌 使用提示</strong> 若想单独保存某组对照数据，可以直接复制正文段落，或截取赛程表格中的特定行。不建议一次性打开过多标签页，保持一至两个对照窗口效率更高。
+      </div>
+
+      <div class="section-head">▎常见查询片段（FAQ 摘要）</div>
+      <details class="faq-mini">
+        <summary>📅 赛程更新频率与来源</summary>
+        <p>赛程数据通常跟随官方抽签和调整实时同步。页面内标注了最近一次更新时间（UTC+8）。如果你发现某场比赛时间与主流体育媒体不一致，可以核对页面顶部的公告栏。</p>
+      </details>
+
+      <details class="faq-mini">
+        <summary>📋 淘汰赛对阵图是否包含加时/点球纪录</summary>
+        <p>对阵图默认显示常规时间结果。如需查看点球大战详细轮次和罚球队员，可点击具体场次进入单场数据页。页面也提供了历史点球命中率的统计链接。</p>
+      </details>
+
+      <p style="margin-top: 2rem;">
+        以上内容基于日常查阅习惯整理，没有大段的资料堆砌，只有最常用的几个查询入口和对照思路。如果需要更完整的赛程表、积分变化走势或球队档案，直接进入 <a href="https://chinesehome-fifa2026.com">世界杯</a> 主页面，所有模块都在左侧导航栏按类别排好。每次打开都可以从上次浏览的记录继续，不必重新定位。
+      </p>
+
+    </div>
+
+    <!-- 底部附注 -->
+    <div class="meta-footnote">
+      <span>📄 整理 · 赛历对照笔记</span>
+      <span>🔄 最近更新 · 2026 版面</span>
+      <span>⚽ 数据源 · 官方通告</span>
+    </div>
+
+  </div>
+</body>
+</html>
