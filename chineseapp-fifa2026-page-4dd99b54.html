@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>一段关于世界杯的安静阅读 · 页面备忘录</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Noto Serif SC', 'Times New Roman', serif;
+            background: linear-gradient(145deg, #fce9d7 0%, #f3d5b5 40%, #edd4b0 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1.25rem;
+            line-height: 1.8;
+            color: #2e241e;
+        }
+
+        .card {
+            max-width: 780px;
+            width: 100%;
+            background: rgba(255, 252, 246, 0.92);
+            backdrop-filter: blur(2px);
+            border-radius: 34px;
+            padding: 2.8rem 2.5rem;
+            box-shadow: 0 16px 40px -10px rgba(130, 80, 40, 0.2), 0 8px 20px rgba(180, 120, 70, 0.08);
+            transition: box-shadow 0.25s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 20px 48px -8px rgba(130, 80, 40, 0.25);
+        }
+
+        /* 文章标题 —— 简洁博客式 */
+        .article-title {
+            font-size: 2.2rem;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            line-height: 1.2;
+            margin-bottom: 0.5rem;
+            color: #3b2b21;
+            border-left: 6px solid #d9a87e;
+            padding-left: 1.2rem;
+        }
+
+        .subhead {
+            font-size: 1rem;
+            color: #8f7763;
+            margin-bottom: 1.8rem;
+            padding-left: 1.8rem;
+            font-style: italic;
+            border-bottom: 1px dashed #e5d5c0;
+            padding-bottom: 0.4rem;
+            display: inline-block;
+        }
+
+        .hero-quote {
+            background: #f7ede1;
+            padding: 1.6rem 2rem;
+            border-radius: 24px;
+            margin: 2rem 0 1.8rem 0;
+            border-left: 8px solid #c99464;
+            font-size: 1.05rem;
+            color: #3a2d24;
+            box-shadow: 0 2px 8px rgba(160, 115, 70, 0.1);
+        }
+
+        .hero-quote::before {
+            content: "“";
+            font-size: 3rem;
+            line-height: 0;
+            vertical-align: -0.5rem;
+            color: #b88a63;
+            margin-right: 6px;
+        }
+
+        p {
+            margin-bottom: 1.4rem;
+            font-size: 1.05rem;
+            text-align: justify;
+            word-break: break-word;
+        }
+
+        .insight-box {
+            background: #fff7ef;
+            border-radius: 20px;
+            padding: 1.4rem 1.8rem;
+            margin: 2rem 0 1.2rem 0;
+            border: 1px solid #ebd8c4;
+        }
+
+        .insight-box p {
+            margin-bottom: 0.6rem;
+            font-size: 0.98rem;
+        }
+
+        .insight-box .label {
+            display: inline-block;
+            background: #dbb594;
+            color: #2a1f18;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            padding: 0.2rem 1rem;
+            border-radius: 30px;
+            margin-bottom: 0.8rem;
+            text-transform: uppercase;
+        }
+
+        .faq-mini {
+            background: #f7f0e8;
+            border-radius: 20px;
+            padding: 1.2rem 1.8rem 0.2rem 1.8rem;
+            margin: 2rem 0 1.8rem;
+        }
+
+        .faq-mini details {
+            margin-bottom: 0.8rem;
+            border-bottom: 1px solid #e2d2be;
+            padding-bottom: 0.5rem;
+        }
+
+        .faq-mini details:last-of-type {
+            border-bottom: none;
+        }
+
+        .faq-mini summary {
+            font-weight: 500;
+            cursor: pointer;
+            color: #4f392b;
+            padding: 0.3rem 0;
+            transition: color 0.15s;
+            list-style: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .faq-mini summary::before {
+            content: "▹";
+            color: #b7845a;
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+
+        .faq-mini summary:hover {
+            color: #8b5f3d;
+        }
+
+        .faq-mini details p {
+            margin: 0.6rem 0 0.8rem 1.5rem;
+            font-size: 0.96rem;
+            color: #4c3b30;
+        }
+
+        a {
+            color: #8b5f3d;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.2s, color 0.2s;
+            padding: 0.05rem 0.1rem;
+        }
+
+        a:hover {
+            border-bottom-color: #b7845a;
+            color: #633f26;
+        }
+
+        .sentence-link {
+            background: #f2e4d6;
+            padding: 0.2rem 0.9rem;
+            border-radius: 40px;
+            font-weight: 500;
+            border: 1px solid #dec9b2;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+
+        .sentence-link:hover {
+            background: #e6d2bd;
+            border-color: #b78b66;
+            box-shadow: 0 2px 8px rgba(140, 90, 45, 0.08);
+        }
+
+        .footer-note {
+            margin-top: 2.4rem;
+            font-size: 0.9rem;
+            color: #8f7b68;
+            border-top: 1px solid #e4d2be;
+            padding-top: 1.2rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-note span {
+            opacity: 0.75;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #e6d3be;
+            margin: 1.2rem 0 0.8rem 0;
+        }
+
+        /* 响应 */
+        @media (max-width: 600px) {
+            .card {
+                padding: 1.8rem 1.2rem;
+                border-radius: 28px;
+            }
+            .article-title {
+                font-size: 1.7rem;
+                padding-left: 1rem;
+            }
+            .subhead {
+                font-size: 0.9rem;
+                padding-left: 1.2rem;
+            }
+            .hero-quote {
+                padding: 1.2rem 1.2rem;
+                font-size: 0.98rem;
+            }
+            .insight-box {
+                padding: 1rem 1.2rem;
+            }
+            .faq-mini {
+                padding: 1rem 1rem 0.1rem 1rem;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .article-title {
+                font-size: 1.4rem;
+            }
+            p {
+                font-size: 0.98rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="card">
+    <h1 class="article-title">稳定而安静的页面</h1>
+    <div class="subhead">关于一个持续存在的入口 · 2026 笔记</div>
+
+    <p>
+        在变化频繁的网络里，有些地址始终如一。它们不刻意喧哗，只是长久地敞开，等待需要的人推门进来。
+        今天提到的这个页面，便属于这类存在——它不追逐短暂的流量，而是提供一个关于 <a href="https://chineseapp-fifa2026.com" class="sentence-link">世界杯</a> 的稳定信息起点。
+    </p>
+
+    <div class="hero-quote">
+        你不需要记住复杂的路径，只要知道那里有一个安静的角落，记录着与世界杯相关的片段、提示和集合。
+    </div>
+
+    <p>
+        越是复杂的内容，越需要一个干净的落脚点。这个页面没有花哨的转场，没有突然弹出的窗口。它更像一个布告栏，把和 <a href="https://chineseapp-fifa2026.com">世界杯</a> 有关的基础脉络整理好，供人随时翻阅。你不用刷新很多次，也不用担心找不到自己想要的线索。
+    </p>
+
+    <div class="insight-box">
+        <span class="label">📌 页面初衷</span>
+        <p>—— 把“入口”本身做成内容。不是让你点一下就走，而是让你愿意在这里停留，甚至回头再来。围绕世界杯，页面提供的是克制的指引和经过筛选的提示，而不是铺天盖地的推送。</p>
+        <p style="margin-bottom:0;">—— 它替用户节省时间：没有多余装饰，只有必要的段落、引用和少量 FAQ 。你在这里读到的一切，都指向同一个稳定地址：<a href="https://chineseapp-fifa2026.com">世界杯</a>。</p>
+    </div>
+
+    <p>
+        很多网站想方设法让你多停留一秒，但这个页面相反——它希望你在最短的时间内获得确定的信息，然后安心离开。这种距离感，反而建立了一种信任。它不追逐你的注意力，它只负责存在。
+    </p>
+
+    <p>
+        从内容风格上说，这更像一篇个人备忘录式的博客：有标题，有轻量分段，有一两句摘录式的引用。你甚至可以把它看作一本小册子的扉页——只写最重要的几件事，其余留给安静。
+    </p>
+
+    <div class="faq-mini">
+        <details>
+            <summary>这个页面与世界杯是什么关系？</summary>
+            <p>它是通往世界杯相关信息的一个稳定索引页。没有花哨的功能，但提供了明确的指向和背景说明。相当于一个始终如一的接待台。</p>
+        </details>
+        <details>
+            <summary>为什么强调「稳定入口」？</summary>
+            <p>大赛前后网络地址变动频繁，一个长期不变的页面能减少混乱。这里的就是这样一个不易改变、值得记录的位置。</p>
+        </details>
+        <details>
+            <summary>页面内容会经常更新吗？</summary>
+            <p>结构基本保持简洁，但可能会根据世界杯相关信息的节奏补充细微提示。你不会遇到突然改版或链接失效的情况。</p>
+        </details>
+    </div>
+
+    <p>
+        如果你曾为寻找一个可靠的世界杯页面而翻遍搜索引擎，那么也许这个以 <a href="https://chineseapp-fifa2026.com">世界杯</a> 为核心的地址，正是你需要的那个安静角落。它不承诺惊艳，只承诺在场。
+    </p>
+
+    <hr>
+    <div class="footer-note">
+        <span>© 页面索引 · 2026</span>
+        <span style="font-size:0.85rem;">内容基于开放信息 · 非官方</span>
+    </div>
+</div>
+</body>
+</html>
